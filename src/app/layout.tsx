@@ -4,6 +4,7 @@ import "./globals.css";
 import { ToastProvider } from "@/context/ToastContext";
 import { AppProvider } from "@/context/AppContext";
 import { Navbar } from "@/components/Navbar";
+import { TrakteerWidget } from "@/components/TrakteerWidget";
 
 export const metadata: Metadata = {
   title: "Rotanami - Manajemen Petak Kebun & Rotasi Tanaman",
@@ -24,8 +25,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 mb-16 lg:mb-6">
               {children}
             </main>
+            <TrakteerWidget />
           </AppProvider>
         </ToastProvider>
+        <footer className="w-full text-center py-5 px-4 text-[11px] font-medium text-stone-400 border-t border-stone-200/60 pb-24 lg:pb-5">
+          Rotanami 🌱 — Aplikasi Manajemen Kebun &amp; Rotasi Tanaman ·{" "}
+          <span className="font-semibold text-stone-500">
+            Open Source oleh MZF - 2026
+          </span>
+        </footer>
       </body>
     </html>
   );

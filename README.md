@@ -17,6 +17,8 @@ Rotanami adalah aplikasi berbahasa Indonesia yang dirancang untuk membantu pekeb
 7. [Struktur Database & Skema](#struktur-database--skema)
 8. [Akun & Data Contoh (Demo Data)](#akun--data-contoh-demo-data)
 9. [Batasan & Catatan MVP](#batasan--catatan-mvp)
+10. [Widget Trakteer & Kode Sumber Terbuka](#widget-trakteer--kode-sumber-terbuka)
+11. [Lisensi & Atribusi](#lisensi--atribusi)
 
 ---
 
@@ -203,3 +205,37 @@ Secara bawaan, aplikasi dilengkapi data contoh percontohan:
 1. **Pengingat:** Pengingat aktivitas beroperasi sebagai agenda di dalam aplikasi (*in-app agenda*) dan tidak mengirim email/SMS/push notification pihak ketiga.
 2. **Koneksi Database:** Gunakan connection string Neon PostgreSQL dengan format `sslmode=require` pada production.
 3. **Ekspor Dokumen:** Format ekspor yang didukung secara penuh dan teruji adalah format **CSV** dengan standar UTF-8.
+
+---
+
+## Widget Trakteer & Kode Sumber Terbuka
+
+### Widget Trakteer (Dukungan Pengembang)
+- Tombol melayang (*floating button*) khas Trakteer di sudut kanan bawah layar dengan tulisan *"Web app ini gratis & bebas iklan. Kopi kecil, server tetap jalan"*.
+- Saat diklik, sebuah dialog muncul **tanpa berpindah halaman** berisi:
+  - Pilihan nominal traktiran mulai dari **Rp6.000** dan kelipatannya (Rp6.000, Rp12.000, Rp18.000, Rp24.000, Rp36.000, Rp60.000).
+  - **Kode QR yang dibuat langsung di dalam aplikasi** (pustaka `qrcode`, tanpa memanggil layanan QR eksternal) yang menunjuk ke [trakteer.id/perpus_opera](https://trakteer.id/perpus_opera/).
+  - Tombol *Salin Tautan* dan *Buka Trakteer* sebagai alternatif.
+- Traktiran bersifat sukarela, tidak mengunci fitur apa pun, dan aplikasi tidak menyimpan data pembayaran.
+- Semua pengaturan widget (tautan tujuan, daftar nominal) berada di satu tempat: `src/components/TrakteerWidget.tsx`.
+
+### Unduh Kode Sumber
+- Tombol **"Unduh Source Code (.zip)"** tersedia di dalam dialog Trakteer dan mengunduh berkas `public/rotanami-source.zip`.
+- Arsip berisi seluruh kode sumber aplikasi (tanpa `node_modules`, `.git`, `.kilo`, dan `.env`).
+- Buat ulang arsip setiap kali ada perubahan kode sebelum deploy:
+  ```bash
+  npm run pack-source
+  ```
+
+---
+
+## Lisensi & Atribusi
+
+Proyek ini diterbitkan sebagai **perangkat lunak open source** dan bebas digunakan, dipelajari, disalin, dan dikembangkan oleh siapa saja.
+
+**Open Source oleh MZF - 2026**
+
+Pengembang: **MZF** (2026) · Rotanami 🌱 — Aplikasi Manajemen Petak Kebun, Riwayat Tanam, Rotasi Tanaman, dan Kesehatan Tanah.
+
+Dukungan pengembangan dapat disalurkan melalui Trakteer: [https://trakteer.id/perpus_opera/](https://trakteer.id/perpus_opera/)
+
