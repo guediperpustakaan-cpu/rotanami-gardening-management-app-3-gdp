@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #fbf9f5;
+    --foreground: #1e281e;
+    --primary: #2d5a27;
+    --primary-foreground: #ffffff;
+    --secondary: #eef3ec;
+    --secondary-foreground: #213a1c;
+    --accent: #d97736;
+    --accent-foreground: #ffffff;
+    --border: #e3ded5;
+    --card: #ffffff;
+    --card-foreground: #1e281e;
+    --muted: #6e766c;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1ccbf;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b5ad9d;
+}
+
+/* Accessible focus ring */
+*:focus-visible {
+  outline: 2px solid #2d5a27;
+  outline-offset: 2px;
+}
